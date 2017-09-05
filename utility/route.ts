@@ -51,35 +51,6 @@ export function dispatch(req: express.Request, res: express.Response): void {
         .then(() => handler(req.query)).then(resolve).catch(reject);
 }
 
-/*
-let controllers: ControllerDict = {};
-function getController(target: Object) {
-    let ctrlname = target.constructor.name;
-    let ctrl = controllers[ctrlname];
-    if (!ctrl) {
-        ctrl = Object.create(target);
-        controllers[ctrlname] = ctrl;
-    }
-
-    return ctrl;
-}
-
-//定义修饰器，注册指定路径的处理方法（在未登录状态不处理请求，提示登录）
-export function On(path: string) {
-    return function (target: Object, key: string) {
-        let controller = getController(target);
-        handlers[path] = (<any>target)[key].bind(controller);
-    }
-}
-
-//定义修饰器，注册指定路径的处理方法（在未登录状态也处理请求）
-export function OnWithoutLogin(path: string) {
-    return function (target: Object, key: string) {
-        let controller = getController(target);
-        handlersWithoutLogin[path] = (<any>target)[key].bind(controller);
-    }
-}*/
-
 //定义修饰器，注册控制器类
 export function Controller(clazz: Function) {
     let prototype = clazz.prototype
