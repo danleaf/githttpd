@@ -13,7 +13,7 @@ require('./controllers/home');
     console.log('connect to welding db');
 });*/
 
-let webroot = path.join(process.cwd(), "./static");
+let webroot = path.join(process.cwd(), "./webapp");
 let reporoot = config["ReposRoot"] || path.join(process.cwd(), "repos");
 
 console.log(`The root of repos is ${reporoot}`);

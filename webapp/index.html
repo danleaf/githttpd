@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Welding Monitor</title>
+    <link rel="stylesheet" href="thirdparty/css/jquery-ui.css">
+    <style>
+        table tbody tr:nth-child(odd) td {
+            background-color: #eeeeee;
+            border-color: #eeeeee;
+        }
+
+        table tbody tr:nth-child(even) td {
+            background-color: #f8f8f8;
+            border-color: #f8f8f8;
+        }
+
+        body {
+            moz-user-select: -moz-none;
+            -moz-user-select: none;
+            -o-user-select:none;
+            -khtml-user-select:none;
+            -webkit-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+        }
+
+        table tbody tr th {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div id="content"></div>
+<!--
+<div>
+    <canvas id="videoCanvas" width="640" height="480"></canvas>
+    <script type="text/javascript" src="thirdparty/jsmpg.js"></script>
+    <script type="text/javascript">
+        // Setup the WebSocket connection and start the player
+        var client = new WebSocket('ws://127.0.0.1:8084/');
+        var canvas = document.getElementById('videoCanvas');
+        monitor.videoPlayer = new jsmpeg(client, { canvas: canvas, knockMessage: "monitor:1" });
+    </script>
+</div>
+-->
+
+<script src="thirdparty/BrowserType.js"></script>
+<script src="promise.js"></script>
+<script src="thirdparty/jquery-1.9.1.js"></script>
+<script src="thirdparty/jqueryui-1.10.4.js"></script>
+<script src="app.js"></script>
+</body>
+
+</html>
