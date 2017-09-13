@@ -30,10 +30,12 @@ namespace autorun
             if (space < 0)
                 space = cmd.IndexOf('\t');
 
+            //Debugger.Launch(); Debugger.Break();
 
             ProcessStartInfo info = new ProcessStartInfo();
             info.FileName = space < 0 ? cmd : cmd.Substring(0, space);
-            info.Arguments = cmd.Substring(space).Trim();
+            if (space > 0)
+                info.Arguments = cmd.Substring(space).Trim();
             info.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory;
             info.CreateNoWindow = true;
             pr = Process.Start(info);
