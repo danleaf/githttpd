@@ -8,11 +8,6 @@ import {config} from "./config";
 
 require('./controllers/home');
 
-/*mongoose.connect('mongodb://127.0.0.1/welding', (err) => {
-    if (err) throw err;
-    console.log('connect to welding db');
-});*/
-
 let webroot = path.join(process.cwd(), "./webapp");
 let reporoot = config["ReposRoot"] || path.join(process.cwd(), "repos");
 
@@ -58,7 +53,7 @@ app.use(function (req, res) {
 });
 
 let server = http.createServer(app);
-server.listen(8080);
+server.listen(8086);
 
 console.log("Server Started OK");
 
